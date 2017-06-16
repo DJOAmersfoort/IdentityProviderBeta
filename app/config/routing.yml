@@ -1,0 +1,3 @@
+app:
+    resource: '@IdpBundle/Controller/'
+    type: annotation

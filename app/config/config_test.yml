@@ -1,0 +1,23 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+# Use SQLite for the testing environment
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path: '%kernel.project_dir%/var/data/testing.db'
+        charset: UTF8
+
+swiftmailer:
+    disable_delivery: true
