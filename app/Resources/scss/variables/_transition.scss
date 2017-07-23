@@ -1,0 +1,17 @@
+/**
+ * This file contains transition durations and timing functions, which have
+ * been designed as mentioned in Google's Material Design Guidelines.
+ *
+ * @author Roelof Roos <github@roelof.io>
+ */
+
+// Animation easings
+$t-ease-on: cubic-bezier(.4, 0, .2, 1);
+$t-ease-enter: cubic-bezier(0, 0, .2, 1);
+$t-ease-leave: cubic-bezier(.4, 0, 1, 1);
+$t-ease-leave-temp: cubic-bezier(.4, 0, .6, 1);
+
+// Animation durations
+$t-dur-full: 375ms;
+$t-dur-enter: 225ms;
+$t-dur-leave: 195ms;

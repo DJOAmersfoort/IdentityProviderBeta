@@ -1,0 +1,47 @@
+/**
+ * Main pages
+ *
+ * @author Roelof Roos <github@roelof.io>
+ */
+
+.content-page {
+  // JS-free toggle button, never visible
+  &__menu-toggle {
+    display: none;
+  }
+
+  // Menu
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: -$main-menu-width;
+    bottom: 0;
+
+    overflow-y: auto;
+    width: $main-menu-width;
+
+    padding: $base-padding;
+
+    transition: left $t-dur-leave $t-ease-leave;
+  }
+
+  &__menu-toggle:checked + &__menu {
+    left: 0;
+    transition-duration: $t-dur-enter;
+    transition-timing-function: $t-ease-enter;
+  }
+
+  // Main content
+  &__main {
+
+  }
+
+}
+
+// Formatting for desktop
+@include desktop {
+  .content-page__menu {
+    display: flex;
+    width: 100;
+  }
+}

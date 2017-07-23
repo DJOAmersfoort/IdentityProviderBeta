@@ -1,0 +1,27 @@
+/**
+ * Used for the node on the top of the page that's only visible when focussed
+ * and on screen readers
+ *
+ * @author Roelof Roos <github@roelof.io>
+ */
+
+.skip-to-content {
+  @include sr-only;
+  @include sr-only-focusable;
+
+  &:focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: .6rem .7rem;
+
+    color: $dark-invert;
+    background-color: $dark;
+
+    @include mobile {
+      right: 0;
+      text-align: center;
+    }
+  }
+}
