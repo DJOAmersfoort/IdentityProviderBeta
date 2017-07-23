@@ -1,0 +1,23 @@
+{
+  "name": "djoamersfoort.idp",
+  "private": true,
+  "devDependencies": {
+    "bulma": "^0.4.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/encore dev",
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "prod": "./node_modules/.bin/encore production"
+  },
+  "browserslist": [
+    "> 1% in NL",
+    "last 1 version",
+    "not IE <= 11"
+  ]
+}

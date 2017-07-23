@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset>
+  <!-- Directories -->
+  <file>app</file>
+  <file>src</file>
+  <file>tests</file>
+  <file>web</file>
+
+  <!-- Ignore some directories -->
+  <exclude-pattern>vendor/</exclude-pattern>
+  <exclude-pattern>web/config.php</exclude-pattern>
+
+  <!-- We just use PSR-2 -->
+  <rule ref="PSR2"/>
+
+  <!-- Ignore some global-scoped files -->
+  <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+    <exclude-pattern>app/AppKernel.php</exclude-pattern>
+    <exclude-pattern>app/AppCache.php</exclude-pattern>
+  </rule>
+
+  <!-- Configs -->
+  <arg name="colors"/>
+
+</ruleset>
