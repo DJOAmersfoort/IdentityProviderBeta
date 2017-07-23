@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping
+    xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="IdpBundle\Repository\UserRepository" name="IdpBundle\Entity\User">
+    <id name="id" type="uuid" >
+        <generator strategy="CUSTOM"/>
+        <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
+    </id>
+
+    <field name="remoteId" type="string" length="10" unique="true"/>
+    <field name="firstName" type="string" length="255" nullable="true"/>
+    <!-- <field name="middleName" type="string" length="255" nullable="true"/> -->
+    <field name="lastName" type="string" length="255" nullable="true"/>
+    <field name="email" type="string" length="255" nullable="true"/>
+
+    <embedded
+        name="address"
+        class="IdpBundle\Entity\Address"
+        use-column-prefix="false" />
+  </entity>
+</doctrine-mapping>
