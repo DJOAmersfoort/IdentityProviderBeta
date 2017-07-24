@@ -36,9 +36,11 @@
       background-position: center;
     }
   }
+
   &__logo-text {
     @include sr-only;
   }
+
   &__form {
     border-radius: $radius;
 

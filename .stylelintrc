@@ -1,0 +1,48 @@
+# Extend a sane default set
+extends: "stylelint-config-standard"
+
+# And add some of our rules
+rules:
+  # Enure lowercase everything
+  property-case: lower
+  selector-pseudo-class-case: lower
+  selector-type-case: lower
+  selector-pseudo-element-case: lower
+  media-feature-name-case: lower
+  at-rule-name-case: lower
+  color-hex-case: lower
+  function-name-case: lower
+  unit-case: lower
+  value-keyword-case: lower
+
+  # Furthermore, restrict colour definitions
+  color-hex-length: long
+  color-named: never
+  color-no-invalid-hex: true
+
+  # And make sure all resources are loaded explicitly over https, or are local
+  function-url-no-scheme-relative: true
+  function-url-scheme-whitelist: ['data', 'https']
+
+  # Enforce some styling bits
+  string-quotes: single
+  length-zero-no-unit: true
+  number-leading-zero: never
+  declaration-colon-newline-after: null
+
+  # Allow some newlines between blocks
+  declaration-empty-line-before:
+    - never
+    - ignore:
+      - after-declaration
+
+  # And /never/ allow important
+  keyframe-declaration-no-important: true
+  declaration-no-important: true
+
+  # And exclude some scss-specific at rules
+  at-rule-no-unknown:
+    - true
+    - ignoreAtRules:
+      - 'include'
+      - 'mixin'
