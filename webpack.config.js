@@ -9,6 +9,7 @@ const Encore = require('@symfony/webpack-encore')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjpeg = require('imagemin-mozjpeg')
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 Encore
   // directory where all compiled assets will be stored
@@ -37,6 +38,20 @@ Encore
 
   // Enable PostCSS processing
   .enablePostCssLoader()
+
+  // Add ESLint
+  .addLoader({
+    enforce: 'pre',
+    test: /\.jsx?$/,
+    exclude: /node_modules/,
+    loader: 'eslint-loader',
+    options: {
+      cache: true
+    }
+  })
+
+  // Add StyleLint
+  .addPlugin(new StyleLintPlugin())
 
   // Copy images to destination
   .addPlugin(new CopyWebpackPlugin([
