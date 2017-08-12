@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace IdpBundle\Enum;
+namespace AppBundle\Enum;
 
 use MyCLabs\Enum\Enum;
 

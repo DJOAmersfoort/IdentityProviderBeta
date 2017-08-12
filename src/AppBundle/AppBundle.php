@@ -1,11 +1,11 @@
 <?php
 
-namespace IdpBundle;
+namespace AppBundle;
 
 use Acelaya\Doctrine\Type\PhpEnumType;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class IdpBundle extends Bundle
+class AppBundle extends Bundle
 {
     /**
      * {@inheritdoc}

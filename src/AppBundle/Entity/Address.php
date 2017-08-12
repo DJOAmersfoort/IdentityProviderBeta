@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace IdpBundle\Entity;
+namespace AppBundle\Entity;
 
-use IdpBundle\Entity\Address;
+use AppBundle\Entity\Address;
 
 /**
  * An address, inserted into other Entities

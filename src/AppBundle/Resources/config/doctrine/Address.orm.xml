@@ -3,7 +3,7 @@
     xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <embeddable name="IdpBundle\Entity\Address">
+  <embeddable name="AppBundle\Entity\Address">
     <field name="address" column="address" type="string" length="100" nullable="true"/>
     <field name="zipCode" column="zip_code" type="string" length="8" nullable="true"/>
     <field name="city" column="city" type="string" length="100" nullable="true"/>
