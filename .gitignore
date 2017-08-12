@@ -1,4 +1,4 @@
-# --> Composer
+### Composer ###
 composer.phar
 /vendor/
 
@@ -6,50 +6,22 @@ composer.phar
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock
 
-# --> Symfony
-# Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
+### Linux ###
+*~
 
-# Email spool folder
-/app/spool/*
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
 
-# Cache, session files and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-/var/sessions/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/sessions/.gitkeep
+# KDE directory preferences
+.directory
 
-# Parameters
-/app/config/parameters.yml
-/app/config/parameters.ini
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
 
-# Managed by Composer
-/app/bootstrap.php.cache
-/var/bootstrap.php.cache
-/bin/*
-!bin/console
-!bin/symfony_requirements
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
-# Assets and user uploads
-/web/bundles/
-/web/uploads/
-
-# PHPUnit
-/app/phpunit.xml
-/phpunit.xml
-
-# Build data
-/build/
-
-# Backup entities generated with doctrine:generate:entities command
-**/Entity/*~
-
-# --> NodeJS
+### Node ###
 # Logs
 logs
 *.log
@@ -109,7 +81,58 @@ typings/
 # dotenv environment variables file
 .env
 
-# --> DJO Identity Provider
+
+### Symfony ###
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+# Email spool folder
+/app/spool/*
+
+# Cache, session files and logs (Symfony3)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+!var/sessions/.gitkeep
+
+# Parameters
+/app/config/parameters.yml
+/app/config/parameters.ini
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/symfony_requirements
+
+# Assets and user uploads
+/web/bundles/
+/web/uploads/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
+
+### Symfony Patch ###
+/web/css/
+/web/js/
+
+### Symfony server ###
+/.web-server-pid
+
+### Identity Provider ###
 # Non-repo data (assets, databases)
 /var/data
 /web/public
