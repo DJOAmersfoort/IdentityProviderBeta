@@ -1,0 +1,27 @@
+<!-- HTML5 😍 -->
+<!doctype html>
+<html>
+  <head>
+    <!-- Set charset to UTF-8 first -->
+    <meta charset="UTF-8" />
+    <!-- Wooh, more emoji 😊 -->
+
+    <!-- Present title early -->
+    <title>{% block foundation_title %}{% endblock %}</title>
+
+    {% block foundation_meta %}{% endblock %}
+
+    <!-- Start of Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('public/main.css') }}">
+    {% block foundation_stylesheets %}{% endblock %}
+    <!-- End of Stylesheets -->
+  </head>
+  <body>
+    {% block foundation_body %}{% endblock %}
+
+    <!-- Start of Javascripts -->
+    <script src="{{ asset('public/app.js') }}" charset="utf-8"></script>
+    {% block foundation_javascripts %}{% endblock %}
+    <!-- End of Javascripts -->
+  </body>
+</html>
