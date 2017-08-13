@@ -25,11 +25,14 @@ class FaviconController extends Controller
         $expire = new \DateTime();
         $expire->add(new \DateInterval('P14D'));
 
-        return $this
+        $response = $this
             ->render('favicon/manifest.json.twig')
             ->setDate(new \DateTime)
             ->setPublic()
             ->setExpires($expire);
+
+        $response->headers->add(['Content-Type' => 'text/json; charset=utf-8']);
+        return $response;
     }
 
     /**
@@ -43,10 +46,13 @@ class FaviconController extends Controller
         $expire = new \DateTime();
         $expire->add(new \DateInterval('P14D'));
 
-        return $this
+        $response = $this
             ->render('favicon/browserconfig.xml.twig')
             ->setDate(new \DateTime)
             ->setPublic()
             ->setExpires($expire);
+
+        $response->headers->add(['Content-Type' => 'text/xml; charset=utf-8']);
+        return $response;
     }
 }
