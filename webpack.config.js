@@ -55,7 +55,16 @@ Encore
 
   // Copy images to destination
   .addPlugin(new CopyWebpackPlugin([
-    { from: './app/Resources/images/*.{jpg,jpeg,png,gif,svg}' }
+    {
+      from: 'app/Resources/images/*.{jpg,jpeg,png,gif,svg}',
+      flatten: true,
+      to: 'images/'
+    },
+    {
+      from: 'app/Resources/images/icons/*.{png,svg,ico}',
+      flatten: true,
+      to: 'icons/'
+    }
   ]))
 
   // Apply imagemin, using mozjpeg for JPEG minification
