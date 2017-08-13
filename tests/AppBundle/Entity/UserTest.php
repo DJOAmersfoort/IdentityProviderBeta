@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace Tests\AppBundle\Entity;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use IdpBundle\Entity\User;
-use IdpBundle\Entity\Address;
+use AppBundle\Entity\User;
+use AppBundle\Entity\Address;
 
 class UserTest extends KernelTestCase
 {
