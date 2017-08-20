@@ -29,6 +29,8 @@
     },
     "require": {
         "php": ">=7.1",
+        "ext-json": "^1.5",
+        "ext-mbstring": "*",
         "acelaya/doctrine-enum-type": "^2.0",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
