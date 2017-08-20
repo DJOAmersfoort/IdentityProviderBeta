@@ -13,7 +13,7 @@
 
     <!-- Names -->
     <field name="firstName" type="string" length="255" nullable="true"/>
-    <!-- <field name="middleName" type="string" length="255" nullable="true"/> -->
+    <field name="middleName" type="string" length="255" nullable="true"/>
     <field name="lastName" type="string" length="255" nullable="true"/>
 
     <!-- Login data -->

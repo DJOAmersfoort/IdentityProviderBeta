@@ -162,6 +162,28 @@ class User implements UserInterface
     }
 
     /**
+     * Sets the middle name of the user
+     *
+     * @param string $middleName
+     * @return User
+     */
+    public function setMiddleName(?string $middleName) : self
+    {
+        $this->middleName = $middleName;
+        return $this;
+    }
+
+    /**
+     * Gets the middle name of the user
+     *
+     * @return string|null
+     */
+    public function getMiddleName() : ?string
+    {
+        return $this->middleName;
+    }
+
+    /**
      * Sets the last name of the user
      *
      * @param string $lastName
