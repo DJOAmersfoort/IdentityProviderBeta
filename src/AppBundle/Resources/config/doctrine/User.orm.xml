@@ -10,10 +10,15 @@
     </id>
 
     <field name="remoteId" type="string" length="10" unique="true"/>
+
+    <!-- Names -->
     <field name="firstName" type="string" length="255" nullable="true"/>
     <!-- <field name="middleName" type="string" length="255" nullable="true"/> -->
     <field name="lastName" type="string" length="255" nullable="true"/>
+
+    <!-- Login data -->
     <field name="email" type="string" length="255" nullable="true"/>
+    <field name="password" type="string" length="512" nullable="true"/>
 
     <embedded
         name="address"

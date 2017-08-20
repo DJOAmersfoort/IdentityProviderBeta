@@ -5,13 +5,15 @@ namespace AppBundle\Entity;
 
 use AppBundle\Entity\Address;
 use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * A user, with all important data inserted
+ * A user, with all important data inserted. Provides enough information for
+ * the Symfony firewall to do it's work too.
  *
  * @author Roelof Roos <github@roelof.io>
  */
-class User
+class User implements UserInterface
 {
     /**
      * Supplies the given user with data from the $data variable.  Returns the
@@ -204,6 +206,29 @@ class User
     }
 
     /**
+     * Sets the password, which shouldn't be hashed before it's sent to this
+     * service, as that exposes the system to needless complexity.
+     *
+     * @param  string $password Plain-text password
+     * @return self
+     */
+    public function setPassword(string $password) : self
+    {
+        $this->password = password_hash($password, \PASSWORD_DEFAULT);
+        return $this;
+    }
+
+    /**
+     * Returns the hash-salted password, or null if not (yet) set.
+     *
+     * @return string|null
+     */
+    public function getPassword() : ?string
+    {
+        return $this->password;
+    }
+
+    /**
      * Set address
      *
      * @param Address $address
@@ -224,5 +249,45 @@ class User
     public function getAddress() : Address
     {
         return $this->address;
+    }
+
+    /*
+        Dynamic or dummy Functions
+     */
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSalt() : ?string
+    {
+        return null;
+    }
+
+    /**
+     * Returns the username for the user, which is always the e-mail address.
+     *
+     * @return string|null
+     */
+    public function getUsername() : ?string
+    {
+        return $this->getEmail();
+    }
+
+    /**
+     * Get the user roles, which is based on the department(s) the user is in
+     *
+     * @return array
+     */
+    public function getRoles() : array
+    {
+        return ['ROLE_USER'];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function eraseCredentials() : void
+    {
+        return;
     }
 }
