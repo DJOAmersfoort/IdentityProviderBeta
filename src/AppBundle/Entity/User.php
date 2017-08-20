@@ -88,10 +88,18 @@ class User
     private $email;
 
     /**
+     * @var string hash-salted password
+     */
+    private $password;
+
+    /**
      * @var Address
      */
     private $address;
 
+    /**
+     * Initialises the User, making sure there's always an address to retrieve
+     */
     public function __construct()
     {
         $this->address = new Address;
@@ -100,7 +108,7 @@ class User
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId() : ?string
     {
@@ -110,7 +118,7 @@ class User
     /**
      * Set remoteId
      *
-     * @param string $remoteId
+     * @param string|null $remoteId
      * @return User
      */
     public function setRemoteId(?string $remoteId) : self
@@ -122,7 +130,7 @@ class User
     /**
      * Get remoteId
      *
-     * @return string
+     * @return string|null
      */
     public function getRemoteId() : ?string
     {
@@ -130,7 +138,7 @@ class User
     }
 
     /**
-     * Set firstName
+     * Set the first name of the user
      *
      * @param string $firstName
      * @return User
@@ -142,9 +150,9 @@ class User
     }
 
     /**
-     * Get firstName
+     * Gets the first name of the user
      *
-     * @return string
+     * @return string|null
      */
     public function getFirstName() : ?string
     {
@@ -152,7 +160,7 @@ class User
     }
 
     /**
-     * Set lastName
+     * Sets the last name of the user
      *
      * @param string $lastName
      * @return User
@@ -164,9 +172,9 @@ class User
     }
 
     /**
-     * Get lastName
+     * Gets the last name of the user
      *
-     * @return string
+     * @return string|null
      */
     public function getLastName() : ?string
     {
@@ -188,7 +196,7 @@ class User
     /**
      * Get email
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail() : ?string
     {
