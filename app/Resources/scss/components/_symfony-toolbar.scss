@@ -1,0 +1,15 @@
+/**
+ * Fixes the Symfony Toolbar to not add a clearer on the login page.
+ *
+ * @author Roelof Roos
+ */
+
+.login-page .sf-toolbar-clearer {
+  position: absolute;
+
+  top: -100px;
+  left: -100px;
+
+  width: 1px;
+  height: 1px;
+}

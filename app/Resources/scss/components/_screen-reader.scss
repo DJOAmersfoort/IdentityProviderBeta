@@ -1,0 +1,15 @@
+/**
+ * Screen reader support, imported from Bootstrap
+ *
+ * @author Roelof Roos
+ */
+
+@import '~bootstrap/scss/mixins/screen-reader';
+
+.sr-only {
+  @include sr-only;
+}
+
+.sr-focus {
+  @include sr-only-focusable;
+}

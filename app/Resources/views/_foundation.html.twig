@@ -20,7 +20,7 @@
     {% include 'favicon/head.html.twig' %}
     <!--End of iconography -->
   </head>
-  <body>
+  <body class="{% block foundation_body_class %}{% endblock %}">
     {% block foundation_body %}{% endblock %}
 
     <!-- Start of Javascripts -->

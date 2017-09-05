@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body_class %}login-page{% endblock %}
+
+{% block login_form %}
+<form action="{{ path('login') }}" method="post">
+  <!-- CSRF-tokens -->
+  <input type="hidden" name="_csrf_token"
+    value="{{ csrf_token('authenticate') }}">
+
+  <!-- E-mail address -->
+  <div class="field">
+    <label for="email" class="sr-only">E-mail adres</label>
+    <p class="control has-icons-left">
+      <input class="input" type="email" name="_username"
+        id="email" placeholder="E-mail">
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </p>
+  </div>
+
+  <!-- Password -->
+  <div class="field">
+    <label for="password" class="sr-only">Wachtwoord</label>
+    <p class="control has-icons-left">
+      <input class="input" type="password" name="_password"
+        id="password" placeholder="Wachtwoord">
+      <span class="icon is-small is-left">
+        <i class="fa fa-lock"></i>
+      </span>
+    </p>
+  </div>
+
+  <!-- Remember me -->
+  <div class="field">
+    <label class="control checkbox">
+      <input class="checkbox" type="checkbox" name="_remember_me"
+        id="remember-me">
+      Remember me
+    </label>
+  </div>
+
+  <!-- Submit button -->
+  <div class="field is-grouped">
+    <div class="control">
+      <button type="submit" class="button is-primary">Inloggen</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+{% block login_error %}
+{% if error %}
+  <article class="message is-warning">
+    <div class="message-header">
+      <p>Login failed</p>
+    </div>
+    <div class="message-body">
+      {{- error.messageKey|trans(error.messageData, 'security') -}}
+      </pre>
+    </div>
+  </article>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="hero is-dark is-fullheight login-page__hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <!-- Gumbo logo -->
+        <div class="column login-page__logo-container">
+          <div class="login-page__logo">
+            <h1 class="login-page__logo-text">DJO Identity Provider</h1>
+          </div>
+        </div>
+        <!-- Login form -->
+        <div class="column is-narrow-tablet">
+          <!-- Login dialog -->
+          <div class="card is-light login-page__form">
+            <!-- Title -->
+            <header class="card-header">
+              <p class="card-header-title">
+                Inloggen bij de DJO Identity Provider
+              </p>
+            </header>
+            <!-- Login form -->
+            <div class="card-content">
+              <div class="content">
+                {{ block('login_error') }}
+                <p>
+                  Vul hieronder je e-mail en wachtwoord in om in te loggen
+                  bij de DJO Identity Provider.
+                </p>
+                {{ block('login_form') }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block hidden %}
+{% endblock %}
