@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="../web/public/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/bb1b23e59d.css">
+  </head>
+
+  <body class="content-page">
+    <a class="skip-to-content" href="#content">Jump to content</a>
+    <input type="checkbox" id="app-menu-toggle" class="content-page__menu-toggle" aria-controls="app-menu">
+    <div id="app-menu" class="content-page__menu" aria-hidden="true" aria-label="Main navigation">
+      <nav class="menu is-dark" role="navigation">
+        <p class="menu-label">
+          General
+        </p>
+        <ul class="menu-list">
+          <li><a href="#x">Dashboard</a></li>
+          <li><a>Customers</a></li>
+        </ul>
+        <p class="menu-label">
+          Administration
+        </p>
+        <ul class="menu-list">
+          <li><a>Team Settings</a></li>
+          <li>
+            <a class="is-active">Manage Your Team</a>
+            <ul>
+              <li><a>Members</a></li>
+              <li><a>Plugins</a></li>
+              <li><a>Add a member</a></li>
+            </ul>
+          </li>
+          <li><a>Invitations</a></li>
+          <li><a>Cloud Storage Environment Settings</a></li>
+          <li><a>Authentication</a></li>
+        </ul>
+        <p class="menu-label">
+          Transactions
+        </p>
+        <ul class="menu-list">
+          <li><a>Payments</a></li>
+          <li><a>Transfers</a></li>
+          <li><a>Balance</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main class="content-page__main">
+      <header class="content-page__header">
+        <label for="app-menu-toggle" class="content-page__header-toggle">
+          I AM A MENU BUTTON
+        </label>
+      </header>
+      <div class="hero is-dark is-bold is-fullheight">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns">
+              <!-- Gumbo logo -->
+              <div class="column login-page__logo-container">
+                <div class="login-page__logo">
+                  <h1 class="login-page__logo-text">Gumbo Millennium</h1>
+                </div>
+              </div>
+              <!-- Login form -->
+              <div class="column is-narrow-tablet">
+                <!-- Login dialog -->
+                <form class="card is-light login-page__form">
+                  <!-- Title -->
+                  <header class="card-header">
+                    <p class="card-header-title">
+                      Inloggen bij Mijn Gumbo Millennium
+                    </p>
+                  </header>
+                  <!-- Login form -->
+                  <div class="card-content">
+                    <div class="content">
+                      <article class="message is-danger">
+                        <div class="message-header">
+                          <p>Well, shit!</p>
+                        </div>
+                        <div class="message-body">
+                          You really fucked up this time. No more Skittles for you!
+                        </div>
+                      </article>
+                      <p>
+                        Vul hieronder je e-mail en wachtwoord in om in te loggen bij mijn Gumbo Millennium.
+                      </p>
+                      <!-- E-mail address -->
+                      <div class="field">
+                        <label for="email" class="sr-only">E-mail adres</label>
+                        <p class="control has-icons-left">
+                          <input class="input" type="email" name="user" id="email" placeholder="E-mail">
+                          <span class="icon is-small is-left">
+                          <i class="fa fa-envelope"></i>
+                        </span>
+                        </p>
+                      </div>
+                      <!-- Password -->
+                      <div class="field">
+                        <label for="password" class="sr-only">Wachtwoord</label>
+                        <p class="control has-icons-left">
+                          <input class="input" type="password" name="pass" id="password" placeholder="Wachtwoord">
+                          <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                        </p>
+                      </div>
+                      <!-- Submit button -->
+                      <div class="field is-grouped">
+                        <div class="control">
+                          <button type="submit" class="button is-primary">Login</button>
+                          <a class="button is-white" href="#forgot">Wachtwoord vergeten</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="../web/public/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/bb1b23e59d.css">
+  </head>
+
+  <body class="login-page">
+    <div class="hero is-dark is-fullheight login-page__hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <!-- Gumbo logo -->
+            <div class="column login-page__logo-container">
+              <div class="login-page__logo">
+                <h1 class="login-page__logo-text">DJO Identity Provider</h1>
+              </div>
+            </div>
+            <!-- Login form -->
+            <div class="column is-narrow-tablet">
+              <!-- Login dialog -->
+              <form class="card is-light login-page__form">
+                <!-- Title -->
+                <header class="card-header">
+                  <p class="card-header-title">
+                    Inloggen bij de DJO Identity Provider
+                  </p>
+                </header>
+                <!-- Login form -->
+                <div class="card-content">
+                  <div class="content">
+                    <article class="message is-danger">
+                      <div class="message-header">
+                        <p>Unexpected SkittleUnderflowException</p>
+                      </div>
+                      <div class="message-body">
+                        We've run out of skittles. Please stand by.
+                      </div>
+                    </article>
+                    <p>
+                      Vul hieronder je e-mail en wachtwoord in om in te loggen
+                      bij de DJO Identity Provider.
+                    </p>
+                    <!-- E-mail address -->
+                    <div class="field">
+                      <label for="email" class="sr-only">E-mail adres</label>
+                      <p class="control has-icons-left">
+                        <input class="input" type="email" name="user" id="email" placeholder="E-mail">
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-envelope"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <!-- Password -->
+                    <div class="field">
+                      <label for="password" class="sr-only">Wachtwoord</label>
+                      <p class="control has-icons-left">
+                        <input class="input" type="password" name="pass" id="password" placeholder="Wachtwoord">
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-lock"></i>
+                        </span>
+                      </p>
+                    </div>
+                    <br />
+                    <!-- Submit button -->
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button type="submit" class="button is-primary">Inloggen</button>
+                        <a class="button is-white" href="#forgot">Wachtwoord vergeten</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
