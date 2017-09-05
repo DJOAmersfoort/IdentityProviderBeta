@@ -1,10 +1,11 @@
 {
-  "name": "djoamersfoort.idp",
+  "name": "@djoamersfoort/idp",
   "private": true,
   "devDependencies": {
     "@symfony/webpack-encore": "^0.11.0",
     "autoprefixer": "^7.1.2",
-    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "bootstrap": "4.0.0-beta",
     "bulma": "^0.5",
     "copy-webpack-plugin": "^4.0.1",
     "eslint": "^4.3.0",
@@ -29,8 +30,11 @@
     "prod": "./node_modules/.bin/encore production"
   },
   "browserslist": [
-    "> 1% in NL",
-    "last 1 version",
-    "not IE <= 11"
+    "> 5% in NL",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions",
+    "not IE >= 1"
   ]
 }
