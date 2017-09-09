@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <ruleset>
   <!-- Directories -->
-  <file>app</file>
   <file>src</file>
   <file>tests</file>
   <file>web</file>
+  <file>app</file>
 
   <!-- Ignore some directories -->
+  <exclude-pattern>app/Resources/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
   <exclude-pattern>web/config.php</exclude-pattern>
+  <exclude-pattern>web/public</exclude-pattern>
 
   <!-- We just use PSR-2 -->
   <rule ref="PSR2"/>
