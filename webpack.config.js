@@ -43,7 +43,7 @@ Encore
   .addLoader({
     enforce: 'pre',
     test: /\.jsx?$/,
-    exclude: /node_modules/,
+    exclude: /(node_modules|var\/)/,
     loader: 'eslint-loader',
     options: {
       cache: true
@@ -51,7 +51,9 @@ Encore
   })
 
   // Add StyleLint
-  .addPlugin(new StyleLintPlugin())
+  .addPlugin(new StyleLintPlugin({
+    files: ['app/Resources/**/*.s?(a|c)ss']
+  }))
 
   // Copy images to destination
   .addPlugin(new CopyWebpackPlugin([
@@ -71,6 +73,7 @@ Encore
   .addPlugin(new ImageminPlugin({
     disable: !Encore.isProduction(),
     test: /\.(jpe?g|png|gif|svg)$/i,
+    exclude: /(node_modules|var\/)/,
     plugins: [
       ImageminMozjpeg({
         quality: 90,
