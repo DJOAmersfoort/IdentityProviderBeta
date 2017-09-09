@@ -7,6 +7,12 @@ framework:
         strict_requirements: true
     profiler: { only_exceptions: false }
 
+    # Provide a Redis cache, provided by the Docker container
+    cache:
+        app: cache.adapter.redis
+        system: cache.adapter.redis
+        default_redis_provider: 'redis://127.0.0.1:9003'
+
 web_profiler:
     toolbar: true
     intercept_redirects: false
@@ -14,8 +20,12 @@ web_profiler:
 # Use SQLite for the development environment
 doctrine:
     dbal:
-        driver: pdo_sqlite
-        path: '%kernel.project_dir%/var/data/development.db'
+        driver: pdo_mysql
+        host: 127.0.0.1
+        port: 9004
+        dbname: idp_app
+        user: idp_user
+        password: H25EN7giIxLcnDOatNTd154AZocltXfNvO4qSSlH
 
 monolog:
     handlers:
