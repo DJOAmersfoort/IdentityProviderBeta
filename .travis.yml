@@ -3,8 +3,30 @@ php:
   - '7.1'
   - nightly
 
+services:
+    - mysql
+    - redis
+
+cache:
+    directories:
+        - /home/travis/.composer
+        - vendor/
+        - node_modules/
+
+env:
+    - SYMFONY_ENV=test
+
+# Create testing database and user
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS idp_test;'
+  - mysql -e 'GRANT ALL ON idp_test.* TO travis;'
+  - composer global require squizlabs/php_codesniffer --no-suggest
+  - 'export PATH="${PATH}:${HOME}/.composer/vendor/bin"'
+
 before_script:
-    - composer install
+    - composer install --no-suggest
+    - php bin/console doctrine:schema:create --dump-sql
 
 script:
     - phpunit
+    - phpcs -n
