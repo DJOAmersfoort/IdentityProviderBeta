@@ -17,7 +17,7 @@ web_profiler:
     toolbar: true
     intercept_redirects: false
 
-# Use SQLite for the development environment
+# Use the MySQL in Docker for the development environment
 doctrine:
     dbal:
         driver: pdo_mysql
