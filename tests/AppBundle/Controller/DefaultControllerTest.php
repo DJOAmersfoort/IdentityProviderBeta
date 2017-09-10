@@ -2,17 +2,32 @@
 
 namespace Tests\AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Tests\Support\PersistentKernelTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class DefaultControllerTest extends PersistentKernelTestCase
 {
-    public function testIndex()
+    /**
+     * Assume we're not yet logged in, and test if we get a redirect to login
+     */
+    public function testIndexAnon()
     {
+        // Get kernel and HTTP client
+        $kernel = static::bootKernel();
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        // Get router and login URL
+        $router = $kernel->getContainer()->get('router');
+        $loginUrl = $router->generate('login', [], UrlGeneratorInterface::ABSOLUTE_URL);
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Welcome to Symfony', $crawler->filter('#container h1')->text());
+        // Crawl login page
+        $crawler = $client->request('GET', '/');
+        $response = $client->getResponse();
+
+        // Perform checks
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertInstanceOf(RedirectResponse::class, $response);
+        $this->assertEquals($loginUrl, $response->getTargetUrl());
     }
 }
